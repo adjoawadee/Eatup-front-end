@@ -1,6 +1,7 @@
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {Component, OnInit, provide} from '@angular/core';
 import {ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes, Router} from "@angular/router";
+import {HTTP_PROVIDERS } from '@angular/http';
 import {WorkComponent} from "../src/work/work.component.ts";
 import {OrderComponent} from "../src/order/order.component.ts";
 import {SignInComponent} from "../src/sign-in/sign-in.component.ts";
@@ -56,6 +57,6 @@ export class AppComponent implements OnInit{
 
 }
 bootstrap(AppComponent,[ provide(APP_BASE_HREF, { useValue: "/" }),
-    ROUTER_PROVIDERS,
+    ROUTER_PROVIDERS, HTTP_PROVIDERS,
     provide(LocationStrategy, {useClass: HashLocationStrategy})]);
 

@@ -4,7 +4,8 @@ System.config({
     map: {
         'app' : 'app',
         'rxjs': 'node_modules/rxjs',
-        '@angular'                         : 'node_modules/@angular'
+        '@angular'                         : 'node_modules/@angular',
+        'ng2-idle': 'node_modules/ng2-idle'
     },
     packages: {
         'app'                              : {main: 'main.ts', defaultExtension: 'ts'},
@@ -14,6 +15,7 @@ System.config({
         '@angular/compiler'                : {main: 'index.js'},
         '@angular/router'                  : {main: 'index.js'},
         '@angular/platform-browser'        : {main: 'index.js'},
-        '@angular/platform-browser-dynamic': {main: 'index.js'}
+        '@angular/platform-browser-dynamic': {main: 'index.js'},
+        '@angular/http':{main:'index.js'}
     }
 });
