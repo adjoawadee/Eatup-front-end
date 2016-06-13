@@ -4,11 +4,10 @@
 import {Injectable} from  "@angular/core";
 import {Http,Headers} from "@angular/http";
 import { Headers, RequestOptions } from '@angular/http';
-import {Route} from '@angular/router';
 
 @Injectable()
 
-export class SignInService {
+export class SignInService{
     constructor(private _http: Http){}
 
     postData(data:any){
@@ -16,6 +15,6 @@ export class SignInService {
         console.log(data);
         const headers= new Headers();
         headers.append('Content-Type','application/json');
-        return this._http.post('https://testing-angular-2.firebaseio.com/datatest.json', body, {headers:headers});
+        return this._http.post('https://testing-angular-2.firebaseio.com/user.json', body, {headers:headers});
     }
 }

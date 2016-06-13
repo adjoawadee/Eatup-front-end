@@ -7,6 +7,7 @@ import {OrderComponent} from "../src/order/order.component.ts";
 import {SignInComponent} from "../src/sign-in/sign-in.component.ts";
 import {HomeComponent} from "../src/home/home.component.ts";
 
+
 import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy, Location} from '@angular/common';
 
 ///<reference path="/assets/jquery.d.ts" />
@@ -52,11 +53,8 @@ export class AppComponent implements OnInit{
             $(".menu_body").hide(500);
         }
     }
-
-
-
 }
 bootstrap(AppComponent,[ provide(APP_BASE_HREF, { useValue: "/" }),
-    ROUTER_PROVIDERS, HTTP_PROVIDERS,
+        ROUTER_PROVIDERS, HTTP_PROVIDERS,
     provide(LocationStrategy, {useClass: HashLocationStrategy})]);
 

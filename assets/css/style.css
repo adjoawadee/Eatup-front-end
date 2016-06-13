@@ -213,7 +213,7 @@ ul {
     line-height: 48px;
     font-weight: 700;
 }
-#login input[type="email"],
+#login input[type="text"],
 #login input[type="password"],
 #signup input[type="text"],
 #signup input[type="email"],

@@ -1,24 +1,24 @@
 <tabs>
-    <tab [tabTitle]="'Sign In'">
+    <tab [tabTitle]="'Sign Up'">
         <div id="signup">
-            <form action="">
+            <form #form="ngForm" (ngSubmit)="onPost(form.value)">
                 <div class="name">
-                    <input type="text" placeholder="Name" required #name />
+                    <input type="text" placeholder="Name" required ngControl="name" />
                 </div>
                 <div class="username">
-                    <input type="text" placeholder="Username" required #username/>
+                    <input type="text" placeholder="Username" required  ngControl="username" />
                     <span>*</span>
                 </div>
                 <div class="email">
-                    <input type="email" placeholder="Email Address" required #email />
+                    <input type="email" placeholder="Email Address" required  ngControl="email"  />
                     <span>*</span>
                 </div>
                 <div class="password">
-                    <input type="password" placeholder="Set Password" required #password />
+                    <input type="password" placeholder="Set Password" required  ngControl="password" />
                     <span>*</span>
                 </div>
                 <div class="submit text-center">
-                    <button (click)="onPost(name.value, username.value, email.value, password.value)">Get Started</button>
+                    <button [disabled]="!form.valid" type="submit">Get Started</button>
                     <!--<input click="onPost(name.value, username.value, email.value, password.value)" type="submit" value="Get started" />-->
                 </div>
             </form>
@@ -27,18 +27,19 @@
 
     <tab [tabTitle]="'Log In'">
         <div id="login">
-            <form action="">
-                <div class="email">
-                    <input type="email" placeholder="Email Address" required  #emailaddress/>
+            <form #form="ngForm" (ngSubmit)="onLogin(username)">
+                <div class="username">
+                    <input type="text" placeholder="Username" required [(ngModel)]="username" />
                     <span>*</span>
                 </div>
                 <div class="password">
-                    <input type="password" placeholder="Set Password" required #password/>
+                    <input type="password" placeholder="Password" required [(ngModel)]="password" />
                     <span>*</span>
                 </div>
                 <div class="submit text-center">
-                    <!--<button (click) ="onLogin(emailaddress.value,password.value)">Log in</button>-->
-                    <input (click) ="onLogin(emailaddress.value,password.value)" type="submit" value="Log In" />
+                    <!--&lt;!&ndash;<button (click) ="onLogin(emailaddress.value,password.value)">Log in</button>&ndash;&gt;-->
+                    <!--<input (click) ="onLogin(emailaddress.value,password.value)" type="submit" value="Log In" />-->
+                    <button type="submit">Login</button>
                 </div>
             </form>
         </div>
