@@ -10,11 +10,13 @@
                 <div class="col-sm-6">
                     <div class="address">
 
-                        <p><span style="font-weight: bold">Aslan Maäh</span>
+                        <p><span style="font-weight: bold">{{newUser.username}}</span>
                             <br>Delivery Address:
-                            <br/>Halter Camp 435,
-                            <br/>Amsterdam,
-                            <br/>Netherlands</p>
+                            <!--<br/>{{newUser.address.street}},-->
+                            <br/>{{newUser.address.housenumber}},{{newUser.address.addition}}
+                            <br/>{{newUser.address.city}},
+                            <br/>Netherlands
+                        <br/><span style="font-weight: bold">Email:</span> {{newUser.email}}</p>
                     </div>
                 </div>
             </div>

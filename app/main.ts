@@ -6,6 +6,7 @@ import {WorkComponent} from "../src/work/work.component.ts";
 import {OrderComponent} from "../src/order/order.component.ts";
 import {SignInComponent} from "../src/sign-in/sign-in.component.ts";
 import {HomeComponent} from "../src/home/home.component.ts";
+import {RegisterService} from "../src/sign-in/services/register.service.ts";
 
 
 import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy, Location} from '@angular/common';
@@ -13,6 +14,7 @@ import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy, Location} from '@
 ///<reference path="/assets/jquery.d.ts" />
 
 import jQuery = require('jquery');
+
 
 
 
@@ -55,6 +57,6 @@ export class AppComponent implements OnInit{
     }
 }
 bootstrap(AppComponent,[ provide(APP_BASE_HREF, { useValue: "/" }),
-        ROUTER_PROVIDERS, HTTP_PROVIDERS,
+        ROUTER_PROVIDERS, HTTP_PROVIDERS, RegisterService,
     provide(LocationStrategy, {useClass: HashLocationStrategy})]);
 

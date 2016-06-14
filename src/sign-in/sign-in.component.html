@@ -1,20 +1,20 @@
 <tabs>
     <tab [tabTitle]="'Sign Up'">
         <div id="signup">
-            <form #form="ngForm" (ngSubmit)="onPost(form.value)">
+            <form #form="ngForm" (submit)="onPost(name,username,email,password)">
                 <div class="name">
-                    <input type="text" placeholder="Name" required ngControl="name" />
+                    <input type="text" placeholder="Name" required [(ngModel)]="name" />
                 </div>
                 <div class="username">
-                    <input type="text" placeholder="Username" required  ngControl="username" />
+                    <input type="text" placeholder="Username" required  [(ngModel)]="username" />
                     <span>*</span>
                 </div>
                 <div class="email">
-                    <input type="email" placeholder="Email Address" required  ngControl="email"  />
+                    <input type="email" placeholder="Email Address" required [(ngModel)]="email"  />
                     <span>*</span>
                 </div>
                 <div class="password">
-                    <input type="password" placeholder="Set Password" required  ngControl="password" />
+                    <input type="password" placeholder="Set Password" required [(ngModel)]="password" />
                     <span>*</span>
                 </div>
                 <div class="submit text-center">
@@ -27,13 +27,13 @@
 
     <tab [tabTitle]="'Log In'">
         <div id="login">
-            <form #form="ngForm" (ngSubmit)="onLogin(username)">
+            <form #form="ngForm" (submit)="onLogin(_username)">
                 <div class="username">
-                    <input type="text" placeholder="Username" required [(ngModel)]="username" />
+                    <input type="text" placeholder="Username" required [(ngModel)]="_username" />
                     <span>*</span>
                 </div>
                 <div class="password">
-                    <input type="password" placeholder="Password" required [(ngModel)]="password" />
+                    <input type="password" placeholder="Password" required [(ngModel)]="_password" />
                     <span>*</span>
                 </div>
                 <div class="submit text-center">
