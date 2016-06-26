@@ -1,21 +1,30 @@
 <tabs>
     <tab [tabTitle]="'Sign Up'">
         <div id="signup">
-            <form #form="ngForm" (submit)="onPost(name,username,email,password)">
-                <div class="name">
-                    <input type="text" placeholder="Name" required [(ngModel)]="name" />
-                </div>
+            <form #form="ngForm" (submit)="onPost(username, email, password, housenumber, streetname, city)">
                 <div class="username">
                     <input type="text" placeholder="Username" required  [(ngModel)]="username" />
                     <span>*</span>
                 </div>
                 <div class="email">
-                    <input type="email" placeholder="Email Address" required [(ngModel)]="email"  />
+                    <input type="email" placeholder="Email Address" required [(ngModel)]="email"/>
                     <span>*</span>
                 </div>
                 <div class="password">
                     <input type="password" placeholder="Set Password" required [(ngModel)]="password" />
                     <span>*</span>
+                </div>
+                <div class="housenumber">
+                    <input type="text" placeholder="House Number" required [(ngModel)]="housenumber"/>
+                    <span>*</span>
+                </div>
+                <div class="streetname">
+                    <input type="text" placeholder="Streetname" required [(ngModel)]="streetname" />
+                    <!--<span>*</span>-->
+                </div>
+                <div class="city">
+                    <input type="text" placeholder="City" required [(ngModel)]="city" />
+                    <!--<span>*</span>-->
                 </div>
                 <div class="submit text-center">
                     <button [disabled]="!form.valid" type="submit">Get Started</button>
@@ -27,7 +36,7 @@
 
     <tab [tabTitle]="'Log In'">
         <div id="login">
-            <form #form="ngForm" (submit)="onLogin(_username)">
+            <form #form="ngForm" (submit)="onLogin(_username,_password)">
                 <div class="username">
                     <input type="text" placeholder="Username" required [(ngModel)]="_username" />
                     <span>*</span>

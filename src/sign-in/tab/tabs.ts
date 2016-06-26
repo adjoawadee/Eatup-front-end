@@ -55,7 +55,7 @@ import { Tab } from './tab.ts';
 }
 .tab-content
 {
-    margin-top: 20%;
+    margin-top: 5%;
       box-shadow: 0 0 20px #666;
 }
   `]

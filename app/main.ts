@@ -14,6 +14,7 @@ import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy, Location} from '@
 ///<reference path="/assets/jquery.d.ts" />
 
 import jQuery = require('jquery');
+import {RestaurantComponent} from "../src/restaurant/restaurant.component.ts";
 
 
 
@@ -29,6 +30,7 @@ import jQuery = require('jquery');
     {path: '/work', name:'Work', component: WorkComponent},
     {path: '/order', name:'Order', component: OrderComponent},
     {path: '/sign-in', name:'Sign-In', component: SignInComponent},
+    {path: '/restaurant', name:'Restaurant', component: RestaurantComponent},
     // {path: '/sign-in-from', name:'Sign-In-Form', component: SignInFormComponent}
 ])
 
@@ -40,6 +42,7 @@ export class AppComponent implements OnInit{
         this.router.navigate(['/']);
         this.clicked =false;
         console.log('on init');
+        localStorage.removeItem("user");
     }
 
     public onClick($event:Event){

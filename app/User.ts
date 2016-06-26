@@ -1,19 +1,14 @@
-import {Address} from "./Address";
-/**
- * Created by Adjoa on 6/14/2016.
- */
+import {Address} from "./Address.ts";
 export class User {
-    name:string;
     username:string;
     email:string;
+    password:string;
     address:Address;
 
-
-
-    constructor(name:string, username:string, email:string, address:Address) {
-        this.name = name;
+    constructor(username:string, email:string, password:string,address:Address){
         this.username = username;
         this.email = email;
+        this.password = password;
         this.address = address;
     }
 

@@ -1,6 +1,3 @@
-/**
- * Created by Adjoa on 6/14/2016.
- */
 export class Address {
     street:string;
     housenumber:string;
