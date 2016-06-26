@@ -46,7 +46,7 @@ export class SignInComponent{
             
             if(localStorage.getItem("user") != null) {
                 this._registerService.isLoggedIn = true;
-                this._router.navigate(['/order']);
+                this._router.navigate(['/']);
             }
             else
             //replace this with a page
@@ -78,7 +78,7 @@ export class SignInComponent{
                     localStorage.setItem("user", temp);
                     console.log("local"+localStorage.getItem("user"));
                     console.log(this.user.address.city);
-                    this._router.navigate(['/order']);
+                    this._router.navigate(['/']);
 
                 }
             )

@@ -15,6 +15,8 @@ import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy, Location} from '@
 
 import jQuery = require('jquery');
 import {RestaurantComponent} from "../src/restaurant/restaurant.component.ts";
+import {ItemComponent} from "../src/items/item.component.ts";
+import {ItemService} from "../src/items/item.service.ts";
 
 
 
@@ -22,7 +24,7 @@ import {RestaurantComponent} from "../src/restaurant/restaurant.component.ts";
 @Component({
     selector: 'my-app',
     templateUrl: './src/app.component.html',
-    directives:[WorkComponent, OrderComponent, SignInComponent, ROUTER_DIRECTIVES]
+    directives:[WorkComponent, OrderComponent, SignInComponent, ItemComponent, ROUTER_DIRECTIVES]
 })
 
 @Routes([
@@ -31,6 +33,7 @@ import {RestaurantComponent} from "../src/restaurant/restaurant.component.ts";
     {path: '/order', name:'Order', component: OrderComponent},
     {path: '/sign-in', name:'Sign-In', component: SignInComponent},
     {path: '/restaurant', name:'Restaurant', component: RestaurantComponent},
+    {path: '/item', name:'Item', component: ItemComponent}
     // {path: '/sign-in-from', name:'Sign-In-Form', component: SignInFormComponent}
 ])
 
@@ -60,6 +63,6 @@ export class AppComponent implements OnInit{
     }
 }
 bootstrap(AppComponent,[ provide(APP_BASE_HREF, { useValue: "/" }),
-        ROUTER_PROVIDERS, HTTP_PROVIDERS, RegisterService,
+        ROUTER_PROVIDERS, HTTP_PROVIDERS, RegisterService, ItemService,
     provide(LocationStrategy, {useClass: HashLocationStrategy})]);
 

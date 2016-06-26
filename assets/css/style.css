@@ -434,3 +434,27 @@ header.header_area {
             transform: rotate(-45deg);
   }
 }
+
+.list-items
+{
+    margin: auto;
+    width: 55%;
+    margin-top: 2%;
+   
+}
+
+.list-items ul li
+{
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    background: rgba(168, 43, 120, 0.88) none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 300;
+    /*height: 60px;*/
+    padding: 10px;
+    margin-bottom: 2px;
+}
