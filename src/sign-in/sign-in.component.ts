@@ -36,8 +36,9 @@ export class SignInComponent{
 
         else {
             this.isValid == true;
-            this._registerService.Register(data).subscribe(
-                data=> this.response = JSON.stringify(data),
+            this._registerService.Register(data)
+                    .subscribe(
+                                data=> this.response = JSON.stringify(data),
                 error => console.log(error)),
                 data=>console.log(data);
                 localStorage.setItem('user', JSON.stringify(data)
@@ -60,13 +61,21 @@ export class SignInComponent{
             username:_username,
             password:_password,
             }
+         let temp:string;
 
         this._registerService.Login(data)
             .subscribe(
                 response => {
                     this.user = response;
                     console.log(this.user);
-                    localStorage.setItem("user", JSON.stringify(this.user));
+                    temp = '{"username"'+':'+'"'+this.user.username+'",'+
+                            '"email"'+':'+'"'+this.user.email+'",'+
+                            '"addition"'+':'+'"'+this.user.address.addition+'",'+
+                            '"city"'+':'+'"'+this.user.address.city+'",'+
+                            '"housenumber"'+':'+'"'+this.user.address.housenumber+'",'+
+                            '"street"'+':'+'"'+this.user.address.street+'"}';
+
+                    localStorage.setItem("user", temp);
                     console.log("local"+localStorage.getItem("user"));
                     console.log(this.user.address.city);
                     this._router.navigate(['/order']);
