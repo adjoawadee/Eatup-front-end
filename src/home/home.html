@@ -22,8 +22,7 @@
                 <div class="list-items">
                     <ul>
                         <li *ngFor="let i of item">
-                            <span  (click)="onAdd({{newUser.username}},{{i.name}})" class="glyphicon glyphicon-plus"></span>
-                            {{ i.name }}
+                            <span  (click)="onAdd(newUser.username,i)" class="glyphicon glyphicon-plus"></span>{{ i.name }}
                         </li>
                     </ul>
                 </div>
